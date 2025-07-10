@@ -9,7 +9,11 @@ public class Journal
 
     public void AddEntry(Entry newEntry)
     {
+        PromptGenerator generator = new PromptGenerator();
+        string prompt = generator.GetRandomPrompt();
 
+        newEntry._promptText = prompt;
+        Console.WriteLine("Today's prompt: " + newEntry._promptText);
     }
 
     public void DisplayAll()
