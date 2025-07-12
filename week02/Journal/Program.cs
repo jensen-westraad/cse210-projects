@@ -5,7 +5,7 @@ class Program
     static void Main(string[] args)
     {
         Journal myJournal = new Journal();
-        bool running = true;
+        bool running = true; // for my loop
 
         while (running)
         {
@@ -19,7 +19,7 @@ class Program
 
             string choice = Console.ReadLine();
 
-            switch (choice)
+            switch (choice) //https://www.youtube.com/watch?v=Qu93CRt-FGc // video I used to better understand switches as a alternative conditional statement for a cleaner looking program.
             {
                 case "1":
                     Entry entry = new Entry();
@@ -40,7 +40,7 @@ class Program
                     break;
                 case "5":
                     running = false;
-                    Console.WriteLine("Exiting the journal. Goodbye!");
+                    Console.WriteLine("Good job on writing in your journal. Goodbye!");
                     break;
                 default:
                     Console.WriteLine("Invalid choice. Please select 1–5.");

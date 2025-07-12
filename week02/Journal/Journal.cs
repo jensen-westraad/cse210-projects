@@ -41,7 +41,7 @@ public class Journal
                 writer.WriteLine(entry._date);
                 writer.WriteLine(entry._promptText);
                 writer.WriteLine(entry._entryText);
-                writer.WriteLine("===");
+                writer.WriteLine("==============================================================================");
             }
         }
         Console.WriteLine($"Journal saved to {file}\n");
