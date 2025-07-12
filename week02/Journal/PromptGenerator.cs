@@ -4,17 +4,12 @@ using System.Collections.Generic;
 public class PromptGenerator
 {
     public List<string> _prompt = new List<string>();
-
+    public Random _rand;
 
 
     public PromptGenerator()
     {
-
-    }
-
-    public string GetRandomPrompt()
-    {
-        List<string> prompts = new List<string>
+        _prompt = new List<string>
         {
             "Who was the most interesting person you interacted with today?",
             "What was the best part of your day?",
@@ -25,8 +20,15 @@ public class PromptGenerator
             "What about today are you most proud of?"
         };
 
-        Random rand = new Random();
-        int index = rand.Next(_prompt.Count);
+        _rand = new Random();
+    }
+
+    public string GetRandomPrompt()
+    {
+
+
+
+        int index = _rand.Next(_prompt.Count);
         return _prompt[index];
 
 
