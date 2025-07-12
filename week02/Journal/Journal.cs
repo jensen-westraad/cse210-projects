@@ -34,7 +34,7 @@ public class Journal
 
     public void SaveToFile(string file)
     {
-        using (StreamWriter writer = new StreamWriter(file))
+        using (StreamWriter writer = new StreamWriter(file, append: true))
         {
             foreach (Entry entry in _entries)
             {
@@ -44,7 +44,7 @@ public class Journal
                 writer.WriteLine("==============================================================================");
             }
         }
-        Console.WriteLine($"Journal saved to {file}\n");
+        Console.WriteLine($"New Journal Entry saved to {file}\n");
     }
 
     public void LoadFromFile(string file)
@@ -74,7 +74,7 @@ public class Journal
                 _entries.Add(entry);
             }
         }
-        Console.WriteLine($"Journal loaded from {file}\n");
+        Console.WriteLine($"Journal Entries loaded from {file}\n");
     }
 
 
