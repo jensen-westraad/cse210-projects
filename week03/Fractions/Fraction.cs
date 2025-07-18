@@ -1,18 +1,18 @@
 using System;
 
-public class Fractions
+public class Fraction
 {
     private int _top;
 
     private int _bottom;
 
-    public Fractions()
+    public Fraction()
     {
         _top = -1;
         _bottom = 1;
-    } 
+    }
 
-     public Fraction(int wholeNumber)
+    public Fraction(int wholeNumber)
     {
         _top = wholeNumber;
         _bottom = 1;
@@ -34,6 +34,6 @@ public class Fractions
     {
         return (double)_top / (double)_bottom;
     }
-   
+
 
 }
