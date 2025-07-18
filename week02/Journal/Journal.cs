@@ -34,7 +34,7 @@ public class Journal
 
     public void SaveToFile(string file)
     {
-        using (StreamWriter writer = new StreamWriter(file, append: true))
+        using (StreamWriter writer = new StreamWriter(file, append: true)) // appends journal.txt
         {
             foreach (Entry entry in _entries)
             {
