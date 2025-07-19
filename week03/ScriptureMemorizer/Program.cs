@@ -5,8 +5,8 @@ class Program
     static void Main(string[] args)
     {
         // Setup scripture and reference
-        Reference reference = new Reference("Proverbs", 3, 5, 6);
-        string text = "Trust in the Lord with all thine heart and lean not unto thine own understanding.";
+        Reference reference = new Reference("1 Nephi", 3, 7);
+        string text = "And it came to pass that I, Nephi, said unto my father: I will go and do the things which the Lord has commended.";
         Scripture scripture = new Scripture(reference, text);
 
         // Main loop
@@ -23,11 +23,11 @@ class Program
             if (scripture.IsCompletelyHidden())
                 break;
 
-            scripture.HideRandomWords(3); 
+            scripture.HideRandomWords(3);
         }
 
         Console.Clear();
-        Console.WriteLine("Final Scripture:");
+        Console.WriteLine("Scripture:");
         Console.WriteLine(scripture.GetDisplayText());
         Console.WriteLine("\nGood job memorizing!");
     }
