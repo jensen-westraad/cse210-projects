@@ -3,6 +3,7 @@ public class Word
     private string _text;
     private bool _isHidden;
 
+    //Constructor for Scripture class
     public Word(string text)
     {
         _text = text;
