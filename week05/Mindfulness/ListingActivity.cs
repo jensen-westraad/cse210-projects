@@ -25,6 +25,7 @@ public class ListingActivity : Activity
 
         Console.WriteLine("List as many responses as you can to the following prompt:");
         Console.WriteLine($"--- {GetRandomPrompt()} ---");
+        Console.WriteLine();
         Console.WriteLine("You may begin in: ");
         ShowCountDown(5);
 
@@ -52,13 +53,19 @@ public class ListingActivity : Activity
         while (DateTime.Now < endTime)
         {
             Console.Write("> ");
-            if (Console.KeyAvailable)
+
+            // ReadLine() blocks until Enter is pressed, so we check time after
+            string input = Console.ReadLine();
+
+            if (!string.IsNullOrWhiteSpace(input))
             {
-                string input = Console.ReadLine();
-                if (!string.IsNullOrWhiteSpace(input))
-                {
-                    items.Add(input);
-                }
+                items.Add(input);
+            }
+
+            // Just in case the user is typing slowly
+            if (DateTime.Now >= endTime)
+            {
+                break;
             }
         }
 

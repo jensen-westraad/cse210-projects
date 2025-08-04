@@ -35,11 +35,12 @@ public class ReflectingActivity : Activity
         Console.WriteLine();
         Console.WriteLine("Consider the following prompt:");
         Console.WriteLine($"--- {GetRandomPrompt()} ---");
+        Console.WriteLine();
         Console.WriteLine("When you have something in mind, press Enter to continue.");
         Console.ReadLine();
 
         Console.WriteLine("Now ponder on each of the following questions as they relate to this experience.");
-        ShowSpinner(3);
+        ShowSpinner(10);
 
         int duration = GetDuration();
         DateTime endTime = DateTime.Now.AddSeconds(duration);
@@ -47,7 +48,7 @@ public class ReflectingActivity : Activity
         while (DateTime.Now < endTime)
         {
             Console.WriteLine("> " + GetRandomQuestion());
-            ShowSpinner(5);
+            ShowSpinner(10);
             Console.WriteLine();
         }
 
