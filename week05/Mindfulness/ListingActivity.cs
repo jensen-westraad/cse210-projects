@@ -54,7 +54,6 @@ public class ListingActivity : Activity
         {
             Console.Write("> ");
 
-            // ReadLine() blocks until Enter is pressed, so we check time after
             string input = Console.ReadLine();
 
             if (!string.IsNullOrWhiteSpace(input))
