@@ -13,19 +13,37 @@ public class BreathingActivity : Activity
         DisplayStartingMessage();
 
         int duration = GetDuration();
-        int interval = 6; // seconds for each full breath in + out
+        int interval = 10; // seconds for each full breath (in + out)
         int cycles = duration / interval;
+        int remainder = duration % interval;
 
         for (int i = 0; i < cycles; i++)
         {
             Console.WriteLine();
             Console.Write("Breathe in... ");
-            ShowCountDown(3);
+            ShowCountDown(4);
 
             Console.Write("Now breathe out... ");
-            ShowCountDown(3);
+            ShowCountDown(6);
+        }
+
+        // Handle remaining seconds with a shorter final breath cycle
+        if (remainder > 0)
+        {
+            Console.WriteLine();
+            Console.WriteLine("Finishing strong with a last breath...");
+
+            int inhaleDuration = remainder / 2;
+            int exhaleDuration = remainder - inhaleDuration;
+
+            Console.Write("Breathe in... ");
+            ShowCountDown(inhaleDuration);
+
+            Console.Write("Now breathe out... ");
+            ShowCountDown(exhaleDuration);
         }
 
         DisplayEndingMessage();
     }
+
 }
