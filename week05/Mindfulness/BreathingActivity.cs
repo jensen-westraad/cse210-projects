@@ -13,7 +13,7 @@ public class BreathingActivity : Activity
         DisplayStartingMessage();
 
         int duration = GetDuration();
-        int interval = 10; // seconds for each full breath (in + out)
+        int interval = 10;
         int cycles = duration / interval;
         int remainder = duration % interval;
 
@@ -27,7 +27,7 @@ public class BreathingActivity : Activity
             ShowCountDown(6);
         }
 
-        // Handle remaining seconds with a shorter final breath cycle
+        // Handle remaining seconds with a shorter final breath cycle added feature
         if (remainder > 0)
         {
             Console.WriteLine();
